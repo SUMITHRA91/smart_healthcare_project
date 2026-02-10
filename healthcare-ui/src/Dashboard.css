@@ -1,0 +1,238 @@
+/* ===== GLOBAL ===== */
+body {
+  margin: 0;
+  background: linear-gradient(135deg, #0b1c1f, #020617);
+  font-family: "Segoe UI", Arial, sans-serif;
+  color: #e0f7fa;
+}
+
+/* ===== DASHBOARD GRID ===== */
+.dashboard-container {
+  display: grid;
+  grid-template-columns: 1fr 2fr 1fr;
+  gap: 24px;
+  padding: 24px;
+}
+
+/* ===== PANELS ===== */
+.left-panel,
+.center-panel,
+.right-panel {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+/* ===== CARD ===== */
+.card {
+  background: #102a2e;
+  padding: 20px;
+  border-radius: 16px;
+  box-shadow: 0 0 25px rgba(0, 255, 255, 0.15);
+}
+
+/* ===== HEADINGS ===== */
+.card h3 {
+  margin-bottom: 14px;
+  font-size: 16px;
+  color: #80deea;
+}
+
+/* ===== DAILY VITALS ===== */
+.vitals {
+  display: flex;
+  justify-content: space-around;
+}
+
+/* ===== CIRCULAR RINGS ===== */
+.vital-ring {
+  text-align: center;
+}
+
+.ring-bg {
+  fill: none;
+  stroke: #1c313a;
+  stroke-width: 10;
+}
+
+.ring-progress {
+  fill: none;
+  stroke: #26c6da;
+  stroke-width: 10;
+  stroke-dasharray: 314;
+  transform: rotate(-90deg);
+  transform-origin: center;
+}
+
+.ring-text {
+  fill: #e0f7fa;
+  font-size: 18px;
+  font-weight: bold;
+}
+
+/* ===== INPUT FORM ===== */
+.form-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 12px;
+}
+
+input {
+  padding: 12px;
+  border-radius: 8px;
+  border: none;
+  background: #08181b;
+  color: #e0f7fa;
+}
+
+input::placeholder {
+  color: #90a4ae;
+}
+
+/* ===== BUTTON ===== */
+.primary-btn {
+  margin-top: 12px;
+  padding: 12px;
+  border-radius: 10px;
+  border: none;
+  background: #26c6da;
+  color: #00363a;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.primary-btn:hover {
+  background: #4dd0e1;
+}
+
+/* ===== AI CONFIDENCE ===== */
+.confidence {
+  margin-top: 8px;
+  font-size: 14px;
+  color: #b2ebf2;
+}
+
+/* ===== ECG ===== */
+canvas {
+  width: 100%;
+  height: 140px;
+  background: #08181b;
+  border-radius: 12px;
+  border: 1px solid #26c6da;
+}
+
+/* ===== CHATBOT ===== */
+.chat-box {
+  height: 180px;
+  overflow-y: auto;
+  background: #08181b;
+  padding: 12px;
+  border-radius: 10px;
+  border: 1px solid #26c6da;
+}
+
+.bot-msg {
+  background: #1c313a;
+  color: #e0f7fa;
+  padding: 8px 12px;
+  border-radius: 8px;
+  margin-bottom: 8px;
+}
+
+.user-msg {
+  background: #00796b;
+  color: white;
+  padding: 8px 12px;
+  border-radius: 8px;
+  margin-bottom: 8px;
+  text-align: right;
+}
+
+/* ===== PLACEHOLDERS ===== */
+.wave-placeholder,
+.chart-placeholder {
+  height: 90px;
+  background: linear-gradient(135deg, #004d40, #00695c);
+  border-radius: 12px;
+  opacity: 0.9;
+}
+
+/* ===== TIPS ===== */
+.tips {
+  padding-left: 18px;
+}
+
+.tips li {
+  margin-bottom: 8px;
+  color: #b2dfdb;
+}
+
+/* ===== VIDEOS ===== */
+.video-card {
+  background: #08181b;
+  padding: 12px;
+  border-radius: 10px;
+  margin-top: 10px;
+  border: 1px solid #26c6da;
+  color: #80deea;
+  cursor: pointer;
+}
+
+.video-card:hover {
+  background: #0f2a30;
+}
+
+.alert-banner {
+  background: #ff1744;
+  color: white;
+  padding: 12px;
+  font-weight: bold;
+  text-align: center;
+  margin-bottom: 12px;
+  animation: blink 1s infinite;
+}
+
+@keyframes blink {
+  50% { opacity: 0.6; }
+}
+
+/* Pulse animation for rings */
+.pulse {
+  animation: pulseRing 1.8s infinite;
+}
+
+@keyframes pulseRing {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.05); }
+  100% { transform: scale(1); }
+}
+
+/* Stress colors */
+.stress.normal { color: #4caf50; }
+.stress.medium { color: #ff9800; }
+.stress.high { color: #ff1744; }
+
+/* Pulse animation */
+.pulse {
+  animation: pulseRing 1.8s infinite;
+}
+@keyframes pulseRing {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.05); }
+  100% { transform: scale(1); }
+}
+
+/* Emergency banner */
+.alert-banner {
+  background: #ff1744;
+  color: white;
+  padding: 12px;
+  font-weight: bold;
+  text-align: center;
+  margin-bottom: 10px;
+}
+
+/* Stress colors */
+.stress.normal { color: #4caf50; }
+.stress.medium { color: #ff9800; }
+.stress.high { color: #ff1744; }
