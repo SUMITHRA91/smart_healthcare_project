@@ -1,13 +1,6 @@
-# Node
 node_modules/
-
-# Django
 __pycache__/
 *.pyc
 db.sqlite3
-
-# Environment
 .env
-
-# Media (optional – comment out if required)
 media/
