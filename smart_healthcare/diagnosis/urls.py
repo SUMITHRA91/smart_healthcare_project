@@ -1,5 +1,5 @@
 from django.urls import path
-from .views import diabetes_predict_api,heart_predict_api,liver_predict_api,generate_report,ecg_predict_api,generate_ecg_report,google_fit_data,login_user,register_user
+from .views import diabetes_predict_api,heart_predict_api,liver_predict_api,generate_report,ecg_predict_api,generate_ecg_report,google_fit_data,login_user,register_user,create_admin
 
 urlpatterns = [
     path("api/diabetes/", diabetes_predict_api),
@@ -9,8 +9,9 @@ urlpatterns = [
     path("predict-ecg/", ecg_predict_api),
     path("ecg-report/", generate_ecg_report),
     path("google-fit/", google_fit_data),
-     path("api/login/", login_user),
+    path("api/login/", login_user),
     path("api/register/",register_user),
+    path('create-admin/', create_admin),
    
     
 
