@@ -453,6 +453,10 @@ def register_user(request):
         {"message": "Register API endpoint. Use POST method."},
         status=405
     )
+from django.contrib.auth import authenticate
+from django.http import JsonResponse
+from django.views.decorators.csrf import csrf_exempt
+import json
 
 @csrf_exempt
 def login_user(request):
@@ -461,15 +465,16 @@ def login_user(request):
         username = data.get("username")
         password = data.get("password")
 
-        try:
-            user = User.objects.get(username=username)
-            if user.check_password(password):
-                return JsonResponse(
-                    {"user_id": user.id, "username": user.username}
-                )
-            return JsonResponse({"error": "Invalid password"}, status=400)
-        except User.DoesNotExist:
-            return JsonResponse({"error": "User not found"}, status=400)
+        user = authenticate(username=username, password=password)
+
+        if user is not None:
+            return JsonResponse({
+                "user_id": user.id,
+                "username": user.username,
+                "message": "Login successful"
+            })
+        else:
+            return JsonResponse({"error": "Invalid username or password"}, status=400)
 
     return JsonResponse(
         {"message": "Login API endpoint. Use POST method."},
